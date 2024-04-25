@@ -30,10 +30,15 @@ const App: FC<AppPropsWithLayout> = (props: AppPropsWithLayout) => {
     <CacheProvider value={emotionCache}>
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
-        <title>React Coursespace</title>
+        <title>Checkly</title>
+        <meta name="description" content="Checkly - The First-ever Digital Travel & Treasure Hunt App" />
+        <meta
+          name="og:title"
+          property="og:title"
+          content="Checkly - The First-ever Digital Travel & Treasure Hunt App"
+        />
       </Head>
       <MUIProvider>
-        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
         {getLayout(<Component {...pageProps} />)}
       </MUIProvider>
