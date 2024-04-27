@@ -5,9 +5,12 @@ import { Header } from '@/components/header'
 
 interface Props {
   children: ReactNode
+  excludeHeaderFooter?: boolean
 }
 
-const MainLayout: FC<Props> = ({ children }) => {
+const MainLayout: FC<Props> = ({ children, excludeHeaderFooter }) => {
+  if (excludeHeaderFooter) return <Box component="main">{children}</Box>
+
   return (
     <Box component="main">
       <Header />
