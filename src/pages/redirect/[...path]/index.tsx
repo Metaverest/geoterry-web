@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import dynamic from 'next/dynamic'
 import { NextPageWithLayout } from '@/interfaces/layout'
 import { MainLayout } from '@/components/layout'
@@ -18,11 +18,11 @@ const Redirect: NextPageWithLayout = () => {
     }
 
     if (isArray(path)) {
-      handleDeepLink(`${path.join('/')}`)
+      handleDeepLink(path.join('/'))
     }
 
     if (isString(path)) {
-      handleDeepLink(`${path}`)
+      handleDeepLink(path)
     }
   }, [path, router])
 
