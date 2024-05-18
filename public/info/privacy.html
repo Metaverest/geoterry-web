@@ -9,7 +9,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="x5-fullscreen" content="true" />
     <meta name="fullscreen" content="yes" />
-    <meta name="Robots" contect="all" />
+    <meta name="Robots" content="all" />
     <style>
       html {
         font-family: sans-serif;
@@ -22,6 +22,7 @@
         width: 0;
         background: transparent;
       }
+
       ::-webkit-scrollbar-thumb {
         background: #000;
       }
@@ -54,6 +55,15 @@
 
       p {
         font-size: 12px;
+      }
+
+      @media (max-width: 767px) {
+        #root {
+          padding-left: 20rem;
+          padding-right: 20rem;
+          padding-top: 20rem;
+          padding-bottom: 20rem;
+        }
       }
     </style>
     <title>Checkly</title>
