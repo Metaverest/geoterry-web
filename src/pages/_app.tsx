@@ -6,11 +6,8 @@ import { EmotionCache } from '@emotion/cache'
 import { CacheProvider } from '@emotion/react'
 import { createEmotionCache } from '@/utils'
 import { MUIProvider } from '@/providers'
-import 'slick-carousel/slick/slick.css'
 import '@/styles/globals.css'
-import '@/styles/react-slick.css'
 import { NextPageWithLayout } from '@/interfaces/layout'
-// import 'slick-carousel/slick/slick-theme.css'
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache()

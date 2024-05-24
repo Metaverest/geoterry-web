@@ -1,68 +1,196 @@
-import React, { FC, useState } from 'react'
+import * as React from 'react'
 import Box from '@mui/material/Box'
+import AppBar from '@mui/material/AppBar'
+import Toolbar from '@mui/material/Toolbar'
+import Button from '@mui/material/Button'
 import Container from '@mui/material/Container'
-import IconButton from '@mui/material/IconButton'
-import useMediaQuery from '@mui/material/useMediaQuery'
-import { Logo } from '@/components/logo'
-import { Navigation, AuthNavigation } from '@/components/navigation'
-import { useTheme } from '@mui/material/styles'
-import { Menu, Close } from '@mui/icons-material'
+import Divider from '@mui/material/Divider'
+import Typography from '@mui/material/Typography'
+import MenuItem from '@mui/material/MenuItem'
+import Drawer from '@mui/material/Drawer'
+import MenuIcon from '@mui/icons-material/Menu'
 
-const Header: FC = () => {
-  const [visibleMenu, setVisibleMenu] = useState<boolean>(false)
-  const { breakpoints } = useTheme()
-  const matchMobileView = useMediaQuery(breakpoints.down('md'))
+export function Header(): JSX.Element {
+  const [open, setOpen] = React.useState(false)
+
+  const toggleDrawer = (newOpen: boolean) => () => {
+    setOpen(newOpen)
+  }
+
+  const scrollToSection = (sectionId: string): void => {
+    const sectionElement = document.getElementById(sectionId)
+    const offset = 128
+    if (sectionElement) {
+      const targetScroll = sectionElement.offsetTop - offset
+      sectionElement.scrollIntoView({ behavior: 'smooth' })
+      window.scrollTo({
+        top: targetScroll,
+        behavior: 'smooth',
+      })
+      setOpen(false)
+    }
+  }
 
   return (
-    <Box sx={{ backgroundColor: 'background.paper' }}>
-      <Container sx={{ py: { xs: 2, md: 3 } }}>
-        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <Logo />
-          <Box sx={{ ml: 'auto', display: { xs: 'inline-flex', md: 'none' } }}>
-            <IconButton onClick={() => setVisibleMenu(!visibleMenu)}>
-              <Menu />
-            </IconButton>
-          </Box>
-          <Box
-            sx={{
-              width: '100%',
+    <div>
+      <AppBar
+        position="fixed"
+        sx={{
+          boxShadow: 0,
+          bgcolor: 'transparent',
+          backgroundImage: 'none',
+          mt: 2,
+        }}
+      >
+        <Container maxWidth="lg">
+          <Toolbar
+            variant="regular"
+            sx={() => ({
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
-              flexDirection: { xs: 'column', md: 'row' },
-
-              transition: (theme) => theme.transitions.create(['top']),
-              ...(matchMobileView && {
-                py: 6,
-                backgroundColor: 'background.paper',
-                zIndex: 'appBar',
-                position: 'fixed',
-                height: { xs: '100vh', md: 'auto' },
-                top: visibleMenu ? 0 : '-120vh',
-                left: 0,
-              }),
-            }}
+              flexShrink: 0,
+              borderRadius: '999px',
+              bgcolor: 'rgba(0, 0, 0, 0.4)',
+              backdropFilter: 'blur(24px)',
+              maxHeight: 40,
+              border: '1px solid',
+              borderColor: 'divider',
+              boxShadow:
+                '0 0 1px rgba(2, 31, 59, 0.7), 1px 1.5px 2px -1px rgba(2, 31, 59, 0.65), 4px 4px 12px -2.5px rgba(2, 31, 59, 0.65)',
+            })}
           >
-            <Box />
-            <Navigation />
-            <AuthNavigation />
-            {visibleMenu && matchMobileView && (
-              <IconButton
-                sx={{
-                  position: 'fixed',
-                  top: 10,
-                  right: 10,
+            <Box
+              sx={{
+                flexGrow: 1,
+                display: 'flex',
+                alignItems: 'center',
+                ml: '-18px',
+                px: 0,
+              }}
+            >
+              <img
+                src={
+                  'https://assets-global.website-files.com/61ed56ae9da9fd7e0ef0a967/61f12e6faf73568658154dae_SitemarkDefault.svg'
+                }
+                style={{
+                  width: '140px',
+                  height: 'auto',
+                  cursor: 'pointer',
                 }}
-                onClick={() => setVisibleMenu(!visibleMenu)}
+                alt="logo of sitemark"
+              />
+              <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+                <MenuItem onClick={() => scrollToSection('features')} sx={{ py: '6px', px: '12px' }}>
+                  <Typography variant="body2" color="text.primary">
+                    Features
+                  </Typography>
+                </MenuItem>
+                <MenuItem onClick={() => scrollToSection('testimonials')} sx={{ py: '6px', px: '12px' }}>
+                  <Typography variant="body2" color="text.primary">
+                    Testimonials
+                  </Typography>
+                </MenuItem>
+                <MenuItem onClick={() => scrollToSection('highlights')} sx={{ py: '6px', px: '12px' }}>
+                  <Typography variant="body2" color="text.primary">
+                    Highlights
+                  </Typography>
+                </MenuItem>
+                <MenuItem onClick={() => scrollToSection('pricing')} sx={{ py: '6px', px: '12px' }}>
+                  <Typography variant="body2" color="text.primary">
+                    Pricing
+                  </Typography>
+                </MenuItem>
+                <MenuItem onClick={() => scrollToSection('faq')} sx={{ py: '6px', px: '12px' }}>
+                  <Typography variant="body2" color="text.primary">
+                    FAQ
+                  </Typography>
+                </MenuItem>
+              </Box>
+            </Box>
+            <Box
+              sx={{
+                display: { xs: 'none', md: 'flex' },
+                gap: 0.5,
+                alignItems: 'center',
+              }}
+            >
+              <Button
+                color="primary"
+                variant="text"
+                size="small"
+                component="a"
+                href="/material-ui/getting-started/templates/sign-in/"
+                target="_blank"
               >
-                <Close />
-              </IconButton>
-            )}
-          </Box>
-        </Box>
-      </Container>
-    </Box>
+                Sign in
+              </Button>
+              <Button
+                color="primary"
+                variant="contained"
+                size="small"
+                component="a"
+                href="/material-ui/getting-started/templates/sign-up/"
+                target="_blank"
+              >
+                Sign up
+              </Button>
+            </Box>
+            <Box sx={{ display: { sm: '', md: 'none' } }}>
+              <Button
+                variant="text"
+                color="primary"
+                aria-label="menu"
+                onClick={toggleDrawer(true)}
+                sx={{ minWidth: '30px', p: '4px' }}
+              >
+                <MenuIcon />
+              </Button>
+              <Drawer anchor="right" open={open} onClose={toggleDrawer(false)}>
+                <Box
+                  sx={{
+                    minWidth: '60dvw',
+                    p: 2,
+                    backgroundColor: 'background.paper',
+                    flexGrow: 1,
+                  }}
+                >
+                  <MenuItem onClick={() => scrollToSection('features')}>Features</MenuItem>
+                  <MenuItem onClick={() => scrollToSection('testimonials')}>Testimonials</MenuItem>
+                  <MenuItem onClick={() => scrollToSection('highlights')}>Highlights</MenuItem>
+                  <MenuItem onClick={() => scrollToSection('pricing')}>Pricing</MenuItem>
+                  <MenuItem onClick={() => scrollToSection('faq')}>FAQ</MenuItem>
+                  <Divider />
+                  <MenuItem>
+                    <Button
+                      color="primary"
+                      variant="contained"
+                      component="a"
+                      href="/material-ui/getting-started/templates/sign-up/"
+                      target="_blank"
+                      sx={{ width: '100%' }}
+                    >
+                      Sign up
+                    </Button>
+                  </MenuItem>
+                  <MenuItem>
+                    <Button
+                      color="primary"
+                      variant="outlined"
+                      component="a"
+                      href="/material-ui/getting-started/templates/sign-in/"
+                      target="_blank"
+                      sx={{ width: '100%' }}
+                    >
+                      Sign in
+                    </Button>
+                  </MenuItem>
+                </Box>
+              </Drawer>
+            </Box>
+          </Toolbar>
+        </Container>
+      </AppBar>
+    </div>
   )
 }
-
-export default Header

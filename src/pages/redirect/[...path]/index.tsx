@@ -1,18 +1,18 @@
-import React, { useEffect } from 'react'
-import dynamic from 'next/dynamic'
+import React, { useCallback, useEffect } from 'react'
 import { NextPageWithLayout } from '@/interfaces/layout'
 import { MainLayout } from '@/components/layout'
 import { useRouter } from 'next/router'
 import isString from 'lodash/isString'
 import isArray from 'lodash/isArray'
-
-const DynamicHomeFeature = dynamic(() => import('../../../components/home/feature'))
+import Typography from '@mui/material/Typography'
+import MenuItem from '@mui/material/MenuItem'
+import Box from '@mui/material/Box'
 
 const Redirect: NextPageWithLayout = () => {
   const router = useRouter()
   const { path } = router.query
 
-  useEffect(() => {
+  const redirect = useCallback(() => {
     const handleDeepLink = (path: string): void => {
       window.location.href = `checkly://${path}`
     }
@@ -24,12 +24,25 @@ const Redirect: NextPageWithLayout = () => {
     if (isString(path)) {
       handleDeepLink(path)
     }
-  }, [path, router])
+  }, [path])
+
+  useEffect(() => {
+    redirect()
+  }, [redirect])
 
   return (
-    <>
-      <DynamicHomeFeature />
-    </>
+    <div>
+      <Typography variant="body2" color="text.primary">
+        Redirecting to Checkly app...
+      </Typography>
+      <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+        <MenuItem onClick={() => redirect()} sx={{ py: '6px', px: '12px' }}>
+          <Typography variant="body2" color="text.primary">
+            Click here if auto open app does not work
+          </Typography>
+        </MenuItem>
+      </Box>
+    </div>
   )
 }
 

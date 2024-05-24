@@ -8,12 +8,8 @@ import createEmotionServer from '@emotion/server/create-instance'
 import { AppContextType, AppPropsType } from 'next/dist/shared/lib/utils'
 import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document'
 
-interface DocumentProps {
-  emotionStylesTags: any[]
-}
-
-class MyDocument extends Document<DocumentProps> {
-  render(): any {
+class MyDocument extends Document {
+  render(): JSX.Element {
     return (
       <Html lang="en">
         <Head>
@@ -21,7 +17,6 @@ class MyDocument extends Document<DocumentProps> {
           <link rel="icon" href="/favicon.ico" />
           <meta name="viewport" content="initial-scale=1, width=device-width" />
 
-          {/* PWA primary color */}
           <meta name="theme-color" content={theme.palette.background.paper} />
 
           <meta content="#fbfbfb" name="theme-color" />
@@ -35,8 +30,6 @@ class MyDocument extends Document<DocumentProps> {
             href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,700;1,500;1,700&display=swap"
             rel="stylesheet"
           />
-          {/* Inject MUI styles first to match with the prepend: true configuration. */}
-          {this.props.emotionStylesTags}
         </Head>
         <body>
           <Main />

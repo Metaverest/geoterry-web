@@ -1,22 +1,11 @@
 import { createTheme as createMuiTheme, Theme } from '@mui/material/styles'
 
-import typography from './typography'
-import paletteBase from './palette-base'
-import paletteLight from './palette-light'
-import paletteDark from './palette-dark'
-import shadows from './shadows'
+import getLPTheme from './get-lp-theme'
 
-// default
-const createTheme = (darkMode?: boolean): Theme => {
-  const palette = darkMode ? { ...paletteBase, ...paletteDark } : { ...paletteBase, ...paletteLight }
-  return createMuiTheme({
-    palette,
-    typography,
-    shadows,
-  })
+const createTheme = (): Theme => {
+  return createMuiTheme(getLPTheme('dark'))
 }
 
-const theme = createTheme(false)
+const theme = createTheme()
 
-export { paletteBase, paletteLight, paletteDark, typography, shadows }
 export default theme
