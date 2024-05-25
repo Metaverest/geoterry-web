@@ -1,0 +1,99 @@
+<svg 
+ xmlns="http://www.w3.org/2000/svg"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ width="2026px" height="2098px">
+<defs>
+<filter id="Filter_0">
+    <feFlood flood-color="rgb(10, 48, 122)" flood-opacity="1" result="floodOut" />
+    <feComposite operator="atop" in="floodOut" in2="SourceGraphic" result="compOut" />import * as React from "react";
+    import { SVGProps } from "react";
+    const SVGComponent = (props: SVGProps<SVGSVGElement>) => (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
+        width="2026px"
+        height="2098px"
+        {...props}
+      >
+        <defs>
+          <filter id="Filter_0">
+            <feFlood
+              floodColor="rgb(10, 48, 122)"
+              floodOpacity={1}
+              result="floodOut"
+            />
+            <feComposite
+              operator="atop"
+              in="floodOut"
+              in2="SourceGraphic"
+              result="compOut"
+            />
+            <feBlend mode="normal" in="compOut" in2="SourceGraphic" />
+          </filter>
+          <linearGradient id="PSgrad_0" x1="100%" x2="0%" y1="0%" y2="0%">
+            <stop offset="0%" stopColor="rgb(59,43,252)" stopOpacity={1} />
+            <stop offset="100%" stopColor="rgb(111,120,253)" stopOpacity={1} />
+          </linearGradient>
+          <filter id="Filter_1">
+            <feFlood
+              floodColor="rgb(35, 214, 83)"
+              floodOpacity={1}
+              result="floodOut"
+            />
+            <feComposite
+              operator="atop"
+              in="floodOut"
+              in2="SourceGraphic"
+              result="compOut"
+            />
+            <feBlend mode="normal" in="compOut" in2="SourceGraphic" />
+          </filter>
+          <linearGradient id="PSgrad_1" x1="0%" x2="0%" y1="100%" y2="0%">
+            <stop offset="0%" stopColor="rgb(0,132,255)" stopOpacity={1} />
+            <stop offset="100%" stopColor="rgb(81,241,255)" stopOpacity={1} />
+          </linearGradient>
+        </defs>
+        <g filter="url(#Filter_0)">
+          <path
+            fillRule="evenodd"
+            fill="url(#PSgrad_0)"
+            d="M154.24,857.311 L1040.332,583.602 C1156.702,547.665 1302.178,605.318 1369.921,707.648 L1843.736,1423.370 C1908.350,1520.973 1881.673,1638.601 1780.732,1688.255 L1008.976,2067.893 C883.380,2129.676 712.474,2092.89 632.158,1980.108 L41.672,1156.828 C-43.385,1038.237 7.891,902.439 154.24,857.311 Z"
+          />
+        </g>
+        <g filter="url(#Filter_1)">
+          <path
+            fillRule="evenodd"
+            fill="url(#PSgrad_1)"
+            d="M300.702,284.930 L1187.11,11.222 C1303.380,-24.714 1448.856,32.938 1516.599,135.267 L1990.414,850.990 C2055.28,948.593 2028.351,1066.221 1927.411,1115.875 L1155.654,1495.513 C1030.59,1557.295 859.152,1519.709 778.836,1407.728 L188.350,584.447 C103.292,465.856 154.569,330.59 300.702,284.930 Z"
+          />
+        </g>
+      </svg>
+    );
+    export default SVGComponent;
+    
+    <feBlend mode="normal" in="compOut" in2="SourceGraphic" />
+</filter>
+<linearGradient id="PSgrad_0" x1="100%" x2="0%" y1="0%" y2="0%">
+  <stop offset="0%" stop-color="rgb(59,43,252)" stop-opacity="1" />
+  <stop offset="100%" stop-color="rgb(111,120,253)" stop-opacity="1" />
+</linearGradient>
+<filter id="Filter_1">
+    <feFlood flood-color="rgb(35, 214, 83)" flood-opacity="1" result="floodOut" />
+    <feComposite operator="atop" in="floodOut" in2="SourceGraphic" result="compOut" />
+    <feBlend mode="normal" in="compOut" in2="SourceGraphic" />
+</filter>
+<linearGradient id="PSgrad_1" x1="0%" x2="0%" y1="100%" y2="0%">
+  <stop offset="0%" stop-color="rgb(0,132,255)" stop-opacity="1" />
+  <stop offset="100%" stop-color="rgb(81,241,255)" stop-opacity="1" />
+</linearGradient>
+
+</defs>
+<g filter="url(#Filter_0)">
+<path fill-rule="evenodd"  fill="url(#PSgrad_0)"
+ d="M154.24,857.311 L1040.332,583.602 C1156.702,547.665 1302.178,605.318 1369.921,707.648 L1843.736,1423.370 C1908.350,1520.973 1881.673,1638.601 1780.732,1688.255 L1008.976,2067.893 C883.380,2129.676 712.474,2092.89 632.158,1980.108 L41.672,1156.828 C-43.385,1038.237 7.891,902.439 154.24,857.311 Z"/>
+</g>
+<g filter="url(#Filter_1)">
+<path fill-rule="evenodd"  fill="url(#PSgrad_1)"
+ d="M300.702,284.930 L1187.11,11.222 C1303.380,-24.714 1448.856,32.938 1516.599,135.267 L1990.414,850.990 C2055.28,948.593 2028.351,1066.221 1927.411,1115.875 L1155.654,1495.513 C1030.59,1557.295 859.152,1519.709 778.836,1407.728 L188.350,584.447 C103.292,465.856 154.569,330.59 300.702,284.930 Z"/>
+</g>
+</svg>
