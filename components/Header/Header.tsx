@@ -11,7 +11,7 @@ export default function Header() {
           <a
             href="/"
             className="text-lg font-semibold rounded-lg tracking-widest focus:outline-none focus:shadow-outline">
-            <h1 className="text-4xl Avenir tracking-tighter text-slate-900 md:text-4x1 lg:text-3xl">
+            <h1 className="text-4xl Avenir tracking-tighter text-gray-900 md:text-4x1 lg:text-3xl">
               NINE4
             </h1>
           </a>
@@ -47,24 +47,24 @@ export default function Header() {
               <li>
                 <a
                   href="/"
-                  className="font-medium text-slate-600 hover:text-slate-900 px-5 py-3 flex items-center transition duration-150 ease-in-out">
+                  className="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out">
                   Careers
                 </a>
               </li>
               <li>
                 <a
                   href="/"
-                  className="font-medium text-slate-600 hover:text-slate-900 px-5 py-3 flex items-center transition duration-150 ease-in-out">
+                  className="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out">
                   About Us
                 </a>
               </li>
               <li>
                 <a
-                  className="inline-flex items-center px-4 py-2 mt-2 font-medium text-white transition duration-500 ease-in-out transform bg-transparent rounded-lg text-md md:mt-0 md:ml-4 bg-slate-900"
+                  className="inline-flex items-center px-4 py-2 mt-2 font-medium text-white transition duration-500 ease-in-out transform bg-transparent rounded-lg text-md md:mt-0 md:ml-4 bg-gray-900"
                   href="/">
                   <span className="justify-center">Download</span>
                   <svg
-                    className="w-3 h-3 fill-current text-slate-400 flex ml-2 -mr-1"
+                    className="w-3 h-3 fill-current text-gray-400 flex ml-2 -mr-1"
                     viewBox="0 0 12 12"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
