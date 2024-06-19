@@ -10,19 +10,19 @@ const Home: NextPage = () => {
     <>
       <Header />
 
-      <section className="text-slate-600 body-font">
+      <section className="text-gray-600 body-font">
         <div className="max-w-7xl mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
           <div className="lg:flex-grow md:w-1/2 md:ml-24 pt-6 flex flex-col md:items-start md:text-left mb-40 items-center text-center">
-            <h1 className="mb-5 sm:text-6xl text-5xl items-center Avenir xl:w-2/2 text-slate-900">
+            <h1 className="mb-5 sm:text-6xl text-5xl items-center Avenir xl:w-2/2 text-gray-900">
               We are making Stunning Websites
             </h1>
-            <p className="mb-4 xl:w-3/4 text-slate-600 text-lg">
+            <p className="mb-4 xl:w-3/4 text-gray-600 text-lg">
               nine4 is a free to use website template for websites made with
               Next.js and styled with Tailwind CSS
             </p>
             <div className="flex justify-center">
               <a
-                className="inline-flex items-center px-5 py-3 mt-2 font-medium text-white transition duration-500 ease-in-out transform bg-transparent border rounded-lg bg-slate-900"
+                className="inline-flex items-center px-5 py-3 mt-2 font-medium text-white transition duration-500 ease-in-out transform bg-transparent border rounded-lg bg-gray-900"
                 href="https://github.com/r1/nine4-2/">
                 <span className="justify-center">Find out more</span>
               </a>
@@ -71,10 +71,10 @@ const Home: NextPage = () => {
           </div>
         </section>
         <div className="grr max-w-7xl pt-20 mx-auto text-center">
-          <h1 className="mb-8 text-6xl Avenir font-semibold text-slate-900">
+          <h1 className="mb-8 text-6xl Avenir font-semibold text-gray-900">
             Less code, less effort.
           </h1>
-          <h1 className="mb-8 text-2xl Avenir font-semibold text-slate-600 text-center">
+          <h1 className="mb-8 text-2xl Avenir font-semibold text-gray-600 text-center">
             Minify your CSS with Tailwind's built in PostCSS support.
           </h1>
           <div className="container flex flex-col items-center justify-center mx-auto rounded-lg ">
@@ -87,10 +87,10 @@ const Home: NextPage = () => {
         <section className="relative">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
             <div className="py-24 md:py-36">
-              <h1 className="mb-5 text-6xl Avenir font-semibold text-slate-900">
+              <h1 className="mb-5 text-6xl Avenir font-semibold text-gray-900">
                 Subscribe to our newsletter
               </h1>
-              <h1 className="mb-9 text-2xl font-semibold text-slate-600">
+              <h1 className="mb-9 text-2xl font-semibold text-gray-600">
                 Enter your email address and get our newsletters straight away.
               </h1>
               <input
@@ -98,9 +98,9 @@ const Home: NextPage = () => {
                 name="email"
                 type="email"
                 autoComplete="email"
-                className="border border-slate-600 w-1/4 pr-2 pl-2 py-3 mt-2 rounded-md text-slate-800 font-semibold hover:border-slate-900"></input>{' '}
+                className="border border-gray-600 w-1/4 pr-2 pl-2 py-3 mt-2 rounded-md text-gray-800 font-semibold hover:border-gray-900"></input>{' '}
               <a
-                className="inline-flex items-center px-14 py-3 mt-2 ml-2 font-medium text-white transition duration-500 ease-in-out transform bg-transparent border rounded-lg bg-slate-900"
+                className="inline-flex items-center px-14 py-3 mt-2 ml-2 font-medium text-white transition duration-500 ease-in-out transform bg-transparent border rounded-lg bg-gray-900"
                 href="/">
                 <span className="justify-center">Subscribe</span>
               </a>
